@@ -1,0 +1,34 @@
+.date {
+     font-family: "Courier New", Courier, monospace;
+}
+
+.date::before {
+    content: "(";
+}
+.date::after {
+    content: ")";
+}
+
+.hidden {
+    display: none;
+}
+.child {
+    margin-left: 50px;
+}
+
+.msg {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.edited > .text {
+    color: grey;
+}
+
+.deleted > .text {
+    color: red;
+}
+
+button {
+    margin-bottom: 5px;
+}

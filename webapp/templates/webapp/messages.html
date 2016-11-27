@@ -1,0 +1,51 @@
+{% extends "webapp/base.html" %}
+
+{% block title %}Web App - Messages{% endblock %}
+
+{% block content %}
+<div id="login-warning">
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    Для добавления и комментирования сообщений выполните вход.
+</div>
+
+<button class="main-show-all">Show All</button>
+
+<button class="main-load-all">Load All</button>
+<div id="main-form" class="hidden">
+    <textarea cols="40" name="message" rows="5" ></textarea>
+    <button class="main-send">Send</button>
+</div>
+
+<div id="posts" >
+
+</div>
+
+<div id="NoMoreMsgsWarning" class="hidden"><h1>No more messages left!</h1></div>
+
+<div id="proto-message" class="hidden">
+    <span class="date"></span>
+    <span class="text"></span>
+    <br>
+    by: <span class="author"></span>
+    <span class="posterId hidden"></span><br>
+    <a class="toShow">Show</a>
+    <a class="toHide">Hide</a>
+    <a class="reply controls hidden">Reply</a>
+    <a class="edit controls hidden">Edit</a>
+    <a class="delete controls hidden">Delete</a>
+    <div class="child"></div>
+</div>
+
+<div id="proto-form" class="hidden">
+    <textarea cols="40" name="message" rows="5" required></textarea>
+    <button class="reply-send">Send</button>
+    <button class="reply-edit">Edit</button>
+    <button class="reply-delete-confirm">Confirm Deletion</button>
+    <button class="reply-cancel">Cancel</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {% load static %}
+    <script src="{% static 'js/messages.js' %}"></script>
+{% endblock %}
